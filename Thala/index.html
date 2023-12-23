@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thala For A Reason</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validate() {
+            // Get the value from the input field with the ID "textbox"
+            var inputValue = document.getElementById("textbox").value;
+
+            // Check if the input value is a valid number (not NaN)
+            if (isNaN(inputValue)) {
+                // Calculate the length of the input value
+                if (inputValue.length == 7)
+                    document.getElementById("result").innerHTML = "Thala for a Reason!!!!";
+                else
+                    document.getElementById("result").innerHTML = "No magic!!!!";
+
+                // Log the character count to the console
+                console.log("Character count: " + inputValue.length);
+            } else {
+                //Convert the string to array
+                digitsArray = Array.from(inputValue);
+                //calculating each element of the array
+                const sum = digitsArray.reduce((acc, digit) => acc + parseInt(digit), 0);
+                console.log("sum : " + sum);
+                if (sum == 7)
+                    document.getElementById("result").innerHTML = "Thala for a Reason!!!!";
+                else
+                    document.getElementById("result").innerHTML = "No magic!!!!";
+            }
+            return false;
+        }
+    </script>
+</head>
+
+
+<body>
+    <div class="container">
+        <form onsubmit="return validate()">
+            <table>
+                <tr>
+                    <td><label for="textbox">Type Here</label></td>
+                    <td><input type="text" id="textbox"></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">Click to Magic</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <span id="result"></span>
+    </div>
+
+</body>
+
+</html>
