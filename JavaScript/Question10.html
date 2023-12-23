@@ -89,8 +89,17 @@
           greet = "Good Evening";
           break;
       }
+      var currentYear = date.getFullYear();
+      var endOfYear = new Date(currentYear, 11, 31);
+
+      var timeDiff = endOfYear - date; //It will return the differnce in the millisecond
+
+      //Convert the millisecond in days
+      var leftDays = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
       document.write(
-        `Today is ${day},${date.getDate()} ${month} ${date.getFullYear()}, Welcome, and ${greet} to You.`
+        `Today is ${day},${date.getDate()} ${month} ${date.getFullYear()}, Welcome, and ${greet} to You.<br>
+        Number of Days till end of the year :${leftDays} `
       );
     </script>
   </body>
