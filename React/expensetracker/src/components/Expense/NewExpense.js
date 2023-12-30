@@ -1,6 +1,8 @@
+import { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 const NewExpense = (props) => {
+  const [openFlag, isFlag] = useState(false);
   const newExpense = (expense) => {
     console.log("in new expense", expense);
     const newData = {
@@ -10,11 +12,22 @@ const NewExpense = (props) => {
     //checkingggg
     console.log(newData);
     props.onIncomingData(newData);
+    isFlag(false);
   };
-
+  const btnHandler = (event) => {
+    isFlag(true);
+  };
   return (
     <div className="new-expense">
-      <ExpenseForm onAddExpense={newExpense} />
+      <div className="new-expense__actions">
+        {openFlag === false ? (
+          <button type="submit" onClick={btnHandler}>
+            Add New Expense
+          </button>
+        ) : null}
+
+        {openFlag === true ? <ExpenseForm onAddExpense={newExpense} /> : null}
+      </div>
     </div>
   );
 };

@@ -1,20 +1,24 @@
 import "./ExpenseForm.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const ExpenseForm = (props) => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
+
+  useEffect(() => {
+    console.log("***date*(*****", date);
+  }, [date]);
 
   const submitHandler = (event) => {
     console.log("in submit handler");
     event.preventDefault();
 
     const expense = {
-      inputTitle: title,
-      inputAmt: amount,
-      inputDate: new Date(date),
+      title,
+      amount,
+      date: new Date(date),
     };
-    console.log(expense);
+    console.log("*********date in submit handler", expense);
     setTitle("");
     setAmount("");
     setDate("");

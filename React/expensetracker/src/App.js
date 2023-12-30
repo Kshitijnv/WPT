@@ -23,7 +23,8 @@ function App() {
   const [expArr, setExpArr] = useState(expenses);
   const onDataHandler = (newData) => {
     console.log("in app js", newData);
-    setExpArr((prevAarr) => [newData, ...prevAarr]);
+    setExpArr([newData, ...expArr]);
+
     console.log(expArr);
   };
   useEffect(() => {
@@ -35,6 +36,12 @@ function App() {
       <h2>Welcome to React!</h2>
       <Person name="Kshitij" />
       <NewExpense onIncomingData={onDataHandler} />
+      <select>
+        <option name="years">2023</option>
+        <option name="years">2022</option>
+        <option name="years">2021</option>
+      </select>
+
       {expArr.map((item) => {
         return (
           <ExpenseItem
