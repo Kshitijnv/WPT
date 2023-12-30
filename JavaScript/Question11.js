@@ -1,28 +1,29 @@
 var date = new Date(2012, 0, 3);
+//Write a function getWeekDay(date) to show the weekday in short format: ‘Mon’, ‘Tue’, ‘Wed’, ‘Thurs’,‘Fri’, ‘Sat’, ‘Sun’.
 
 const getWeekDay = (date) => {
   var day = date.getDay();
   switch (day) {
     case 0:
-      alert("Sun");
+      console.log("Sun");
       break;
     case 1:
-      alert("Mon");
+      console.log("Mon");
       break;
     case 2:
-      alert("Tue");
+      console.log("Tue");
       break;
     case 3:
-      alert("Wed");
+      console.log("Wed");
       break;
     case 4:
-      alert("Thu");
+      console.log("Thu");
       break;
     case 5:
-      alert("Fri");
+      console.log("Fri");
       break;
     case 6:
-      alert("Sat");
+      console.log("Sat");
       break;
   }
 };
