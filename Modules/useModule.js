@@ -4,6 +4,11 @@ const http = require("http");
 const fs = require("fs");
 const url = require("url");
 
+/* q ={pathname:"request uri",query{
+  email:user1,
+  password:user1
+}}
+*/
 var server = http.createServer(function (req, resp) {
   //To separate the query String & Uri
   var q = url.parse(req.url, true);
