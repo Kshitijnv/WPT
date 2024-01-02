@@ -61,8 +61,8 @@ html,body{
 }
 .grid_container{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+   align-items: center;
 }
 .card_content{
     padding: 16px;
